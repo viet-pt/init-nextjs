@@ -1,12 +1,13 @@
-import 'swiper/css/swiper.css';
-import "antd/dist/antd.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import createStore from './../store';
 import { ToastContainer } from 'react-toastify';
+
+import 'swiper/css/swiper.css';
+import "antd/dist/antd.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps, store }) {

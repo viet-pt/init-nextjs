@@ -1,0 +1,13 @@
+.input-radio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__title {
+		color: #000;
+		font-size: 16px;
+	}
+	input {
+		margin-right: 20px;
+		cursor: pointer;
+	}
+}

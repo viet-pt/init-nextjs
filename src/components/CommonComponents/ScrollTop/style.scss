@@ -1,0 +1,17 @@
+.scroll {
+  visibility: hidden;
+  transition: all 200ms ease-out;
+  position: fixed;
+  bottom: 10px;
+  right: 25px;
+  cursor: pointer;
+  background-color: #3eaae4;
+  &__icon {
+    padding: 8px;
+  }
+}
+.show-button {
+  visibility: visible;
+  transition: all 200ms ease-in;
+  bottom: 25px;
+}

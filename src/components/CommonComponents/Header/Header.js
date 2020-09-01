@@ -5,7 +5,6 @@ import { BsSearch, BsX } from "react-icons/bs"
 import { AiOutlineMenu } from "react-icons/ai";
 import ContactFast from '../ContactFast/ContactFast';
 import BackToTop from '../BackToTop/BackToTop';
-import { Input } from 'antd';
 import { Link } from './../../../../routers';
 
 import './Header.scss';
@@ -16,9 +15,6 @@ function Header(props) {
   const [header, setHeader] = useState(false)
   const state = pathname;
   const [stateIcon, setstateIcon] = useState(false);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const showMenu = (open) => {
     setstateIcon(!open)
   }
@@ -82,7 +78,7 @@ function Header(props) {
               </div>
             </Col>
             <Col xs={4}>
-              <div className="iconR" onClick={handleShow}> <BsSearch /></div>
+              <div className="iconR"> <BsSearch /></div>
             </Col>
           </Row>
         </Container>

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../Home/ProductItem/style.scss';
+import { Container, Row } from 'react-bootstrap';
 import CurrencyFormat from 'react-currency-format';
-import { Link } from './../../../routers';
-import './style.scss'
+import { Link } from './../../../../routers';
+import './style.scss';
 
 function Products(props) {
   const { List } = props;

@@ -1,0 +1,13 @@
+.input-checkbox {
+	display: flex;
+	justify-content: center;
+	&__title {
+		color: #000;
+		font-size: 16px;
+  }
+  .ant-checkbox-wrapper {
+    margin-right: 10px;
+    padding-top: 5px;
+  }
+
+}

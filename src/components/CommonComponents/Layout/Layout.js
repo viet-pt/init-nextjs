@@ -1,34 +1,40 @@
-import Head from 'next/head'
-import { Footer, ScrollTop, Header } from 'components'
+import Head from 'next/head';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import ScrollTop from '../ScrollTop/ScrollTop';
 
-export default function Layout({ title, children, url, itemDetails }) {
-  const des = ``;
-
+export default function Layout({ title, children, video, image, description }) {
+  const des = "Sản Phẩm Vẩy nến";
   return (
     <div className="app-wrapper">
       <Head>
-        <title>{title}</title>
-        <meta charSet="UTF-8" />
-        <link rel="icon" href="/logo.png" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" itemProp="url" content={url} />
-        <meta property="og:title" itemProp="name" content={itemDetails ? itemDetails.title : 'DigiToday'} />
-        <meta property="og:description" content={itemDetails ? itemDetails.description : des} />
-        <meta property="og:image" itemProp="thumbnailUrl" content={itemDetails ? itemDetails.img1 : '/static/img/logo.png'} />
-        <meta property="og:image:width" content="640" />
-        <meta property="og:image:height" content="480" />
+        <meta charSet="utf-8" />
+        <title>{title || "VNPT"}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#59B858" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:title" content={title || "VNPT"} />
+        <meta property="title" content={title || "VNPT"} />
+        <meta property="og:site_name" content="VNPT" />
+        <meta property="site_name" content="VNPT" />
+        <meta property="og:type" content="website" />
+        <meta property="image" content={image || "https://zekangg.tk/img/logo.png"} />
+        <meta property="og:image" content={image || "https://zekangg.tk/img/logo.png"} />
+        <meta property="og:description" content={description || des} />
+        <meta property="description" content={description || des} />
+        <link rel="icon" type="image/png" href="static/imgs/logo.png" />
+        {!!video && <meta property='og:video' content={video} />}
+        {!!video && <meta property='video' content={video} />}
       </Head>
 
-      <>
-        <main>
-          <Header />
-          <div className="body-content">
-            {children}
-          </div>
-          <Footer />
-        </main>
-        <ScrollTop />
-      </>
+      <main>
+        <Header />
+        <div className="body-content">
+          {children}
+        </div>
+        <Footer />
+      </main>
+      <ScrollTop />
     </div>
   )
 }
