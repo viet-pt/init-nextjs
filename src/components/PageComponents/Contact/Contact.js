@@ -8,8 +8,7 @@ import { Form, Input } from 'formik-antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { fetchSendQuestionContact } from 'api/question';
 import { toast } from 'react-toastify';
-// import Link from 'next/link';
-import { Link } from './../../../../routers';
+import { Link } from 'routers';
 
 const { TextArea } = Input;
 

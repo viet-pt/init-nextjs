@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import './style.scss';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from './../../../../routers';
+import { Link } from 'routers';
 import CurrencyFormat from 'react-currency-format';
 
 function DescProduct(props) {
-  const { name, price, evaluation, heed, descriptions, usage, ingredients, expirydate, images } = props[0]
+  const { name, price, evaluation, heed, descriptions, usage, ingredients, expirydate, images } = props[0];
+
   useEffect(() => {
     const getAccordion = () => {
       var Accordion = document.getElementsByClassName("accordion");
@@ -23,6 +24,23 @@ function DescProduct(props) {
     }
     getAccordion()
   }, [])
+
+  const to_slug = (str) => {
+    str = str.toLowerCase();
+    str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
+    str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
+    str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
+    str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
+    str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
+    str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
+    str = str.replace(/(đ)/g, 'd');
+    str = str.replace(/([^0-9a-z-\s])/g, '');
+    str = str.replace(/(\s+)/g, '-');
+    str = str.replace(/^-+/g, '');
+    str = str.replace(/-+$/g, '');
+    return str;
+  }
+
   const showProduct = () => {
     let result = props[1].map((task, index) => {
       return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
@@ -41,9 +59,6 @@ function DescProduct(props) {
               <div className="formatProduct">
                 <div>
                   <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
-                </div>
-                <div>
-                  <span className="star">{formatStar(task.start)}</span>
                 </div>
               </div>
             </div>

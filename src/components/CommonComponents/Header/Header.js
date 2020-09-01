@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import './Header.scss';
 import { useRouter } from 'next/router';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsSearch, BsX } from "react-icons/bs"
 import { AiOutlineMenu } from "react-icons/ai";
 import ContactFast from '../ContactFast/ContactFast';
 import BackToTop from '../BackToTop/BackToTop';
-import { Link } from './../../../../routers';
-
-import './Header.scss';
+import { Link } from 'routers';
 
 function Header(props) {
   const router = useRouter()
@@ -15,9 +14,11 @@ function Header(props) {
   const [header, setHeader] = useState(false)
   const state = pathname;
   const [stateIcon, setstateIcon] = useState(false);
+
   const showMenu = (open) => {
     setstateIcon(!open)
   }
+
   const handleScroll = (e) => {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       setHeader(true)
@@ -25,17 +26,19 @@ function Header(props) {
       setHeader(false)
     }
   }
+
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener('scroll', handleScroll);
     }
   }, [header])
+  
   return (
     <div className={`${header ? 'headerScroll' : 'header'}`}>
       <style jsx>{`
             .active::after{
-                content: url('static/imgs/tree.png');
+                content: url('/static/imgs/tree.png');
             }
             `}</style>
       <header id="site-header" className={`header_topBar ${header ? 'boxHeader' : ''}`}>
@@ -43,7 +46,7 @@ function Header(props) {
           <Row className={`${header ? 'headerScroll' : 'header'}`}>
             <Col lg={3} md={3} sm={3} >
               <div id="site-logo" className="clearFix">
-                <Link route="/"><img src="static/imgs/logo.png" alt="cover" className={`img-fluid ${header ? 'headerScrollimg' : ''}`} /></Link>
+                <Link route="/"><img src="/static/imgs/logo.png" alt="cover" className={`img-fluid ${header ? 'headerScrollimg' : ''}`} /></Link>
               </div>
             </Col>
             <Col lg={9} md={9} sm={9}>
@@ -74,7 +77,7 @@ function Header(props) {
             </Col>
             <Col xs={4}>
               <div className="logoR">
-                <img src="static/imgs/logo.png" alt="cover" className="img-fluid d-block mx-auto" />
+                <img src="/static/imgs/logo.png" alt="cover" className="img-fluid d-block mx-auto" />
               </div>
             </Col>
             <Col xs={4}>

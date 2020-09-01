@@ -1,15 +1,32 @@
 import React from 'react';
+import './style.scss';
 import { Container, Row } from 'react-bootstrap';
 import CurrencyFormat from 'react-currency-format';
-import { Link } from './../../../../routers';
-import './style.scss';
+import { Link } from 'routers';
 
 function Products(props) {
   const { List } = props;
+
+  const to_slug = (str) => {
+    str = str.toLowerCase();
+    str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
+    str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
+    str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
+    str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
+    str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
+    str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
+    str = str.replace(/(đ)/g, 'd');
+    str = str.replace(/([^0-9a-z-\s])/g, '');
+    str = str.replace(/(\s+)/g, '-');
+    str = str.replace(/^-+/g, '');
+    str = str.replace(/-+$/g, '');
+    return str;
+  }
+
   const showProduct = () => {
     if (List) {
       let result = List.map((task, index) => {
-        return <Link route={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
+        return <Link href={`/san-pham/${to_slug(task.name)}.${task.id}`} key={index}>
           <a className="resp col-lg-3 col-md-3 col-sm-3 pest">
             <div className="image-box is-trending has-discount">
               <div className="thumb">
@@ -25,9 +42,6 @@ function Products(props) {
                 <div className="formatProduct">
                   <div>
                     <span className="price"><CurrencyFormat value={task.price} displayType={'text'} thousandSeparator={true} />  đ</span>
-                  </div>
-                  <div>
-                    <span className="star">{formatStar(task.start)}</span>
                   </div>
                 </div>
               </div>

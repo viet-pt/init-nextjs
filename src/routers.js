@@ -6,4 +6,4 @@ routers.add("detialproduct","/san-pham/:slug.:id");
 routers.add("contact","/lien-he");
 routers.add("reason","/tin-tuc/:slug.:id");
 
-module.exports = routers ;
+module.exports = routers;

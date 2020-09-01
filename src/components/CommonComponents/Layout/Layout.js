@@ -22,7 +22,7 @@ export default function Layout({ title, children, video, image, description }) {
         <meta property="og:image" content={image || "https://zekangg.tk/img/logo.png"} />
         <meta property="og:description" content={description || des} />
         <meta property="description" content={description || des} />
-        <link rel="icon" type="image/png" href="static/imgs/logo.png" />
+        <link rel="icon" type="image/png" href="/static/imgs/logo.png" />
         {!!video && <meta property='og:video' content={video} />}
         {!!video && <meta property='video' content={video} />}
       </Head>

@@ -7,7 +7,7 @@ function Introduce(props) {
             <style jsx>
                 {
                     `.profZ span::after{
-                        content: url('static/imgs/tree.png');
+                        content: url('/static/imgs/tree.png');
                         position: absolute;
                         top: -80%;
                         right: -10%;
@@ -34,7 +34,7 @@ function Introduce(props) {
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img__0">
                         <div className="infAboutImg_">
                             <div className="infAboutImg">
-                                <img src="static/imgs/inf.png" alt="inf" className="img-fluid dir" />
+                                <img src="/static/imgs/inf.png" alt="inf" className="img-fluid dir" />
                             </div>
                         </div>
                     </Col>
@@ -46,7 +46,7 @@ function Introduce(props) {
                     <Col lg={6} md={6} sm={6} className="inf-img inf-img-0 inf-img_1">
                         <div className="infAboutImg_">
                             <div className="infAboutImg">
-                                <img src="static/imgs/inf_1.png" alt="inf" className="img-fluid " />
+                                <img src="/static/imgs/inf_1.png" alt="inf" className="img-fluid " />
                             </div>
                         </div>
                     </Col>

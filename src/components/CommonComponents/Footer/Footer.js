@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Footer.scss';
-import { Link } from './../../../../routers';
+import { Link } from 'routers';
 function Footer(props) {
   return (
     <React.Fragment>
@@ -50,7 +50,7 @@ function Footer(props) {
               </Col>
               <Col lg={4} md={2} sm={3} sm={3}  >
                 <div className="footerMess">
-                  <img src="static/imgs/Mess.png" alt="" className="img-fluid " />
+                  <img src="/static/imgs/Mess.png" alt="" className="img-fluid " />
                 </div>
               </Col>
             </Row>
@@ -59,7 +59,7 @@ function Footer(props) {
       </div>
       <style jsx>{`
         .footerBottom_imgRight{
-            background-image: url('/img/tree_1.png');
+            background-image: url('/static/imgs/tree_1.png');
             width: 15%;
             height: 100%;
             right: 0;
@@ -68,7 +68,7 @@ function Footer(props) {
             background-size: contain;
         }
         .footerBottom_imgLeft{
-            background-image: url('/img/tree_2.png');
+            background-image: url('/static/imgs/tree_2.png');
             width: 15%;
             height: 100%;
             left: 0;

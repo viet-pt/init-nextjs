@@ -53,7 +53,7 @@ function MainHome() {
       
       <style jsx>{`
            .img-content{
-            background-image: url('static/imgs/Bin.jpg');
+            background-image: url('/static/imgs/Bin.jpg');
             height: 100%;
             width: 80%;
             background-position: center;
@@ -64,7 +64,7 @@ function MainHome() {
             right: 0;
         }
         .text-wrap-box {
-            background-image: url('static/imgs/Last.png');
+            background-image: url('/static/imgs/Last.png');
             background-size: contain;
             background-repeat: no-repeat;
             height: 100%;
