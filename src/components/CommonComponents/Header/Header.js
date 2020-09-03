@@ -7,13 +7,29 @@ import { AiOutlineMenu } from "react-icons/ai";
 import ContactFast from '../ContactFast/ContactFast';
 import BackToTop from '../BackToTop/BackToTop';
 import { Link } from 'routers';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeLocale } from 'stores/reducer/languageReducer';
+import { FormattedMessage } from 'react-intl';
 
-function Header(props) {
-  const router = useRouter()
-  const pathname = router.pathname;
+function Header() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const [header, setHeader] = useState(false)
-  const state = pathname;
   const [stateIcon, setstateIcon] = useState(false);
+
+  const pathname = router.pathname;
+  const state = pathname;
+  const locale = useSelector(state => state.language.locale);
+
+  useEffect(() => {
+    const language = sessionStorage.getItem('language');
+    if (language) {
+      dispatch(changeLocale(language));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   const showMenu = (open) => {
     setstateIcon(!open)
@@ -26,6 +42,11 @@ function Header(props) {
       setHeader(false)
     }
   }
+
+  const handleChange = value => {
+    sessionStorage.setItem('language', value);
+    dispatch(changeLocale(value));
+  };
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
@@ -53,11 +74,46 @@ function Header(props) {
               <div className="wrap_nav">
                 <nav id="main-nav" className="main-nav">
                   <ul id="menu-primary-menu" className="menu">
-                    <li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}> <Link route="/gioi-thieu"><a><span className="cool-link">Giới Thiệu</span></a></Link></li>
-                    <li className={`menu-item ${state === '/products' ? 'active' : ''}`}> <Link route="/san-pham"><a><span className="cool-link">Sản Phẩm</span></a></Link></li>
-                    <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}> <Link route="/y-kien-chuyen-gia"><a><span className="cool-link">Ý Kiến Chuyên Gia</span></a></Link></li>
-                    <li className={`menu-item ${state === '/news' ? 'active' : ''}`}><Link route="/tin-tuc"><a><span className="cool-link">Tin Tức</span></a></Link></li>
-                    <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}> <Link route="/lien-he"><a><span className="cool-link">Liên Hệ</span></a></Link></li>
+                    <li className={`menu-item ${state === '/introduces' ? 'active' : ''}`}>
+                      <Link route="/gioi-thieu">
+                        <a><span className="cool-link"><FormattedMessage id='IDS_PACK_DATA' /></span></a>
+                      </Link>
+                    </li>
+
+                    <li className={`menu-item ${state === '/products' ? 'active' : ''}`}>
+                      <Link route="/san-pham">
+                        <a><span className="cool-link">Sản Phẩm</span></a>
+                      </Link>
+                    </li>
+
+                    <li className={`menu-item ${state === '/experopinion' ? 'active' : ''}`}>
+                      <Link route="/y-kien-chuyen-gia">
+                        <a><span className="cool-link">Ý Kiến Chuyên Gia</span></a>
+                      </Link>
+                    </li>
+
+                    <li className={`menu-item ${state === '/news' ? 'active' : ''}`}>
+                      <Link route="/tin-tuc">
+                        <a><span className="cool-link">Tin Tức</span></a>
+                      </Link>
+                    </li>
+
+                    <li className={`menu-item ${state === '/contact' ? 'active' : ''}`}>
+                      <Link route="/lien-he">
+                        <a><span className="cool-link">Liên Hệ</span></a>
+                      </Link>
+                    </li>
+
+                    <li>
+                      {locale === 'vi' &&
+                        <img alt="flag" src="/static/imgs/Flag_Vietnam.png" style={{width: '40px'}}
+                          onClick={() => handleChange('en-US')} />
+                      }
+                      {locale === 'en-US' &&
+                        <img alt="flag" src="/static/imgs/Flag_UK.png" style={{width: '40px'}}
+                          onClick={() => handleChange('vi')} />
+                      }
+                    </li>
                   </ul>
                 </nav>
               </div>

@@ -1,0 +1,483 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200903.111806.16044.0.001.json",
+    "dumpEventTime": "2020-09-03T11:18:06Z",
+    "dumpEventTimeStamp": "1599106686417",
+    "processId": 16044,
+    "threadId": null,
+    "cwd": "E:\\NextJs\\init-nextjs",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "server.js"
+    ],
+    "nodejsVersion": "v12.16.2",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.2",
+      "v8": "7.8.279.23-node.34",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1e",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.2/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 25904296,
+        "nice": 0,
+        "sys": 15681015,
+        "idle": 322770234,
+        "irq": 1653562
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 33007281,
+        "nice": 0,
+        "sys": 13205531,
+        "idle": 318142562,
+        "irq": 250937
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 28518859,
+        "nice": 0,
+        "sys": 12233500,
+        "idle": 323602984,
+        "irq": 212843
+      },
+      {
+        "model": "Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz",
+        "speed": 3600,
+        "user": 31893984,
+        "nice": 0,
+        "sys": 12289531,
+        "idle": 320171859,
+        "irq": 185734
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:a6:10:df",
+        "address": "fe80::8d7e:6223:b72e:a20b",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 8
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:a6:10:df",
+        "address": "192.168.76.177",
+        "netmask": "255.255.255.240",
+        "family": "IPv4"
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "2c:f0:5d:0f:4e:49",
+        "address": "fe80::f0d8:73d5:21d:79d",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 14
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "2c:f0:5d:0f:4e:49",
+        "address": "10.144.14.42",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-VNFE2V9"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff63cbb2309",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+11577"
+    },
+    {
+      "pc": "0x00007ff63cbb6869",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+29337"
+    },
+    {
+      "pc": "0x00007ff63cbb56e8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24856"
+    },
+    {
+      "pc": "0x00007ff63ccddd82",
+      "symbol": "v8::base::CPU::has_sse+59378"
+    },
+    {
+      "pc": "0x00007ff63d4fa27e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff63d4e2351",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff63d3ae8ac",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff63d3b9ae0",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff63d3b6604",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff63d3abe03",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff63d3aa474",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff63d3cb67d",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff63d1313d1",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1665"
+    },
+    {
+      "pc": "0x00007ff63d94730d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x0000032f15e9eafd",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2149036032,
+    "totalCommittedMemory": 2149036032,
+    "usedMemory": 2137572912,
+    "availableMemory": 64104896,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 2097152,
+        "capacity": 1047456,
+        "used": 599376,
+        "available": 448080
+      },
+      "old_space": {
+        "memorySize": 525475840,
+        "committedMemory": 525475840,
+        "capacity": 518701920,
+        "used": 518620280,
+        "available": 81640
+      },
+      "code_space": {
+        "memorySize": 3313664,
+        "committedMemory": 3313664,
+        "capacity": 2826080,
+        "used": 2826080,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 7081984,
+        "committedMemory": 7081984,
+        "capacity": 5755040,
+        "used": 5755040,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 1610182656,
+        "committedMemory": 1610182656,
+        "capacity": 1609195040,
+        "used": 1609195040,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544288,
+        "used": 544288,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 14795912,
+        "used": 0,
+        "available": 14795912
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 275.843,
+    "kernelCpuSeconds": 18.828,
+    "cpuConsumptionPercent": 7.26865,
+    "maxRss": 2333851648,
+    "pageFaults": {
+      "IORequired": 5132400,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 52416,
+      "writes": 3294
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    "=E:": "E:\\NextJs\\init-nextjs",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "API_DEV": "http://localhost:3000",
+    "API_PRODUCTION": "http://100.26.20.190:8000",
+    "APPDATA": "C:\\Users\\MSI\\AppData\\Roaming",
+    "COLORTERM": "truecolor",
+    "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-VNFE2V9",
+    "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EXEPATH": "C:\\Program Files\\Git\\bin",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GIT_ASKPASS": "c:\\Users\\MSI\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "HOME": "C:\\Users\\MSI",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\MSI",
+    "INIT_CWD": "E:\\NextJs\\init-nextjs",
+    "IntelliJ IDEA": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2020.1\\bin;",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_261",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\MSI\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-VNFE2V9",
+    "MSYSTEM": "MINGW64",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.22.4 npm/? node/v12.16.2 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "C:\\Program Files (x86)\\Yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "node server.js",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_dependencies_antd": "^4.2.0",
+    "npm_package_dependencies_axios": "^0.19.2",
+    "npm_package_dependencies_body_parser": "^1.19.0",
+    "npm_package_dependencies_bootstrap": "^4.4.1",
+    "npm_package_dependencies_ckeditor4_react": "^1.1.0",
+    "npm_package_dependencies_cookie_parser": "^1.4.5",
+    "npm_package_dependencies_cors": "^2.8.5",
+    "npm_package_dependencies_dotenv": "^8.2.0",
+    "npm_package_dependencies_express": "^4.17.1",
+    "npm_package_dependencies_font_awesome": "^4.7.0",
+    "npm_package_dependencies_formik": "^2.1.4",
+    "npm_package_dependencies_formik_antd": "^2.0.1",
+    "npm_package_dependencies_google_maps_react": "^2.0.6",
+    "npm_package_dependencies_http_proxy_middleware": "^1.0.3",
+    "npm_package_dependencies_jquery": "^3.5.1",
+    "npm_package_dependencies_next": "9.3.6",
+    "npm_package_dependencies_next_cookies": "^2.0.3",
+    "npm_package_dependencies_next_redux_saga": "^4.1.2",
+    "npm_package_dependencies_next_redux_wrapper": "^6.0.0-rc.7",
+    "npm_package_dependencies_next_routes": "^1.4.2",
+    "npm_package_dependencies_node_sass": "^4.14.0",
+    "npm_package_dependencies_path_match": "^1.2.4",
+    "npm_package_dependencies_react": "16.13.1",
+    "npm_package_dependencies_react_bootstrap": "^1.0.1",
+    "npm_package_dependencies_react_currency_format": "^1.0.0",
+    "npm_package_dependencies_react_dom": "16.13.1",
+    "npm_package_dependencies_react_google_maps": "^9.4.5",
+    "npm_package_dependencies_react_icons": "^3.10.0",
+    "npm_package_dependencies_react_id_swiper": "^3.0.0",
+    "npm_package_dependencies_react_moment": "^0.9.7",
+    "npm_package_dependencies_react_redux": "^7.2.0",
+    "npm_package_dependencies_react_toastify": "^6.0.0-rc.2-1",
+    "npm_package_dependencies_redux": "^4.0.5",
+    "npm_package_dependencies_redux_devtools_extension": "^2.13.8",
+    "npm_package_dependencies_redux_saga": "^1.1.3",
+    "npm_package_dependencies_swiper": "^5.3.8",
+    "npm_package_dependencies_underscore": "^1.10.2",
+    "npm_package_dependencies_uuid": "^8.0.0",
+    "npm_package_dependencies_yup": "^0.28.5",
+    "npm_package_dependencies__ant_design_icons": "^4.1.0",
+    "npm_package_dependencies__fortawesome_fontawesome_free_solid": "^5.0.13",
+    "npm_package_dependencies__fortawesome_fontawesome_svg_core": "^1.2.28",
+    "npm_package_dependencies__fortawesome_react_fontawesome": "^0.1.9",
+    "npm_package_dependencies__zeit_next_css": "^1.0.1",
+    "npm_package_dependencies__zeit_next_sass": "^1.0.1",
+    "npm_package_description": "First, run the development server:",
+    "npm_package_devDependencies_webpack_filter_warnings_plugin": "^1.2.1",
+    "npm_package_name": "zekang",
+    "npm_package_private": "true",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_scripts_build": "next build",
+    "npm_package_scripts_dev": "next dev",
+    "npm_package_scripts_start": "node server.js",
+    "npm_package_version": "0.1.0",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\MSI\\OneDrive",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "PATH": "C:\\Users\\MSI\\AppData\\Local\\Temp\\yarn--1599102633831-0.3155540161347392;E:\\NextJs\\init-nextjs\\node_modules\\.bin;C:\\Users\\MSI\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\MSI\\bin;C:\\Program Files\\Java\\jdk1.8.0_261\\bin;C:\\Program Files (x86)\\NetSarang\\Xshell 6;C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.6.10-hotspot\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Windows\\System32\\OpenSSH;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\nodejs;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Users\\MSI\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\MSI\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2020.1\\bin;C:\\Users\\MSI\\AppData\\Local\\Yarn\\bin;C:\\Users\\MSI\\AppData\\Roaming\\npm",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+    "PLINK_PROTOCOL": "ssh",
+    "PORT": "3000",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 11, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e0b",
+    "ProgramData": "C:\\ProgramData",
+    "PROGRAMFILES": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "PWD": "/e/NextJs/init-nextjs",
+    "SESSIONNAME": "Console",
+    "SHLVL": "2",
+    "SYSTEMDRIVE": "C:",
+    "SYSTEMROOT": "C:\\Windows",
+    "TEMP": "C:\\Users\\MSI\\AppData\\Local\\Temp",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.48.2",
+    "TMP": "C:\\Users\\MSI\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-VNFE2V9",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-VNFE2V9",
+    "USERNAME": "MSI",
+    "USERPROFILE": "C:\\Users\\MSI",
+    "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\MSI\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
+    "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\MSI\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-536c6cb3f8-sock",
+    "WINDIR": "C:\\Windows",
+    "YARN_WRAP_OUTPUT": "false",
+    "_": "/usr/bin/winpty"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\System32\\KERNEL32.DLL",
+    "C:\\Windows\\System32\\KERNELBASE.dll",
+    "C:\\Windows\\System32\\WS2_32.dll",
+    "C:\\Windows\\System32\\RPCRT4.dll",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\System32\\PSAPI.DLL",
+    "C:\\Windows\\System32\\ucrtbase.dll",
+    "C:\\Windows\\System32\\ADVAPI32.dll",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\System32\\sechost.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\System32\\USER32.dll",
+    "C:\\Windows\\System32\\win32u.dll",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\System32\\GDI32.dll",
+    "C:\\Windows\\System32\\profapi.dll",
+    "C:\\Windows\\System32\\gdi32full.dll",
+    "C:\\Windows\\System32\\msvcp_win.dll",
+    "C:\\Windows\\System32\\CRYPT32.dll",
+    "C:\\Windows\\System32\\MSASN1.dll",
+    "C:\\Windows\\System32\\bcrypt.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\Windows\\System32\\cfgmgr32.dll",
+    "C:\\Windows\\System32\\bcryptPrimitives.dll",
+    "C:\\Windows\\System32\\IMM32.DLL",
+    "C:\\Windows\\System32\\powrprof.dll",
+    "C:\\Windows\\System32\\UMPDC.dll",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\System32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\kernel.appcore.dll",
+    "\\\\?\\E:\\NextJs\\init-nextjs\\node_modules\\node-sass\\vendor\\win32-x64-72\\binding.node",
+    "C:\\Windows\\System32\\NSI.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\Windows\\System32\\fwpuclnt.dll"
+  ]
+}
