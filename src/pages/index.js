@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home } from 'components/PageComponents';
-import { Layout } from 'components/CommonComponents';
+import { Layout } from 'components';
 import { AdminService } from 'api/AdminService';
 
 function Index(props) {

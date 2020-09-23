@@ -1,0 +1,28 @@
+.search {
+  padding: 3px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  @media (max-width: 374px) {
+    min-width: 88%;
+  }
+  @media (min-width: 375px) {
+    min-width: 100%;
+  }
+  &__input {
+    padding: 3px 15px;
+    border: solid 2px #ccc;
+    outline: none;
+    width: 100%;
+  }
+  &__icon {
+    position: absolute;
+    color: #ccc;
+    height: 1em;
+    width: auto;
+    margin-left: 0.3em;
+    right: 20px;
+    bottom: 9px;
+    opacity: 0.4;
+  }
+}

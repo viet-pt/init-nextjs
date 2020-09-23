@@ -1,6 +1,6 @@
 import { BACKEND_API } from './_config';
 import { CommonService } from './CommonService';
-import { cui } from 'components/CommonComponents';
+import { cui } from 'components';
 import { postRequestNext } from './_http';
 
 const vplusURL = 'https://apiquantri.vinaphoneplus.com.vn/api/APIForWebApp';

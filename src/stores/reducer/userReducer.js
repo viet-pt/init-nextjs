@@ -48,3 +48,16 @@ export function authorizedReducer(state = initialState, action) {
       return state;
   }
 }
+
+export const doLogin = () => (dispatch) => {
+  return dispatch({ 
+    type: AuthorizeAction.LOGIN_ACTION
+  })
+}
+
+export const doLogout = () => (dispatch) => {
+  return dispatch({ 
+    type: AuthorizeAction.LOGOUT_ACTION
+  })
+}
+

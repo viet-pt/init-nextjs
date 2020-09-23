@@ -1,9 +1,10 @@
-const withCSS = require('@zeit/next-css')
-const withSass = require('@zeit/next-sass')
+const withCSS = require('@zeit/next-css');
+const withSass = require('@zeit/next-sass');
+const withFonts = require('next-fonts');
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
-const webpack = require('webpack');
 
-module.exports = withCSS(withSass({
+module.exports = withFonts(withCSS(withSass({
+  enableSvg: true,
   webpack: (config, options) => {
     config.plugins.push(
       new FilterWarningsPlugin({
@@ -24,4 +25,4 @@ module.exports = withCSS(withSass({
     }
     return config;
   }
-}))
+})))

@@ -3,7 +3,7 @@ import './style.scss';
 import PropTypes from 'prop-types';
 
 const InputText = ({ value, name, title, handleOnChange, onEnter, placeholder, extensionClass,
-  onlyNumber, isPassword, errorMsg, customClass, customTitle }) => {
+  onlyNumber, isPassword, errorMsg, customClass, customTitle, readOnly }) => {
   const onChange = (e) => {
     const { value } = e.target;
     handleOnChange(value, name);
@@ -21,11 +21,12 @@ const InputText = ({ value, name, title, handleOnChange, onEnter, placeholder, e
         {title && <span className={`input-text__title ${customTitle || ''}`}>{title}</span>}
         <input
           type={onlyNumber ? "number" : isPassword ? "password" : "text"}
-          className={`${extensionClass || ''} ${errorMsg && 'border-red'}`}
+          className={`${extensionClass || ''} ${errorMsg ? 'border-red' : ''}`}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
           onKeyDown={handleOnKeyDown}
+          readOnly={readOnly}
         />
       </div>
       {errorMsg &&
@@ -36,15 +37,15 @@ const InputText = ({ value, name, title, handleOnChange, onEnter, placeholder, e
 }
 
 InputText.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   handleOnChange: PropTypes.func,
   onEnter: PropTypes.func
 };
 
 InputText.defaultProps = {
   value: '',
-  handleOnChange: () => {},
-  onEnter: () => {}
+  handleOnChange: () => { },
+  onEnter: () => { }
 };
 
 export default React.memo(InputText);

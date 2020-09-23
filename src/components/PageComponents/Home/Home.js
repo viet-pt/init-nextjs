@@ -1,5 +1,5 @@
 import React from 'react';
-import MainHome from './MainHome/MainHome';
+import MainHome from './components/MainHome';
 
 function Home(props) {
   return (

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { cui } from 'components/CommonComponents';
+import { cui } from 'components';
 
 const https = require('https');
 axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });

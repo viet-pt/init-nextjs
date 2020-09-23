@@ -1,11 +1,31 @@
-$background-color: #333333;
-$main-color: #773be2;
+@import "~global/_mixins.scss";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('/font/Montserrat-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url('/font/GoogleSans-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "GSMedium";
+  src: url('/font/GoogleSans-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: "GSBold";
+  src: url('/font/GoogleSans-Bold.otf') format('opentype');
+}
 
 .app-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.body-content {
+  min-height: 80vh;
 }
 
 .modal-content {
@@ -72,6 +92,10 @@ $main-color: #773be2;
 
 button:disabled {
   cursor: not-allowed;
+}
+
+button:focus {
+  outline: none !important;
 }
 
 .bold {
@@ -162,6 +186,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input::placeholder {
+  opacity: 0.6;
+}
 
 input[type=number] {
   -moz-appearance: textfield;
@@ -212,6 +239,8 @@ input[type="month"] {
 
 @media (max-width: 320px) {
   .container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
     max-width: 290px;
   }
 }
@@ -290,19 +319,111 @@ input[type="month"] {
 .image-hover img,
 .image-hover .thumb-title {
 	transform: scale(1);
-	transition: .3s ease-in-out;
+	transition: .4s ease-in-out;
 }
 
 .image-hover:hover img {
-  transform: scale(1.25);
+  transform: scale(1.2);
 }
 
 .image-hover:hover .thumb-title {
   background: #0a62fb;
 }
 
+.btn-hover {
+  transition: all 0.5s;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    background-color: rgba(255,255,255,0.4);
+    transition: all 0.3s;
+  }
+  &:hover::before{
+    opacity: 1;
+    width: 100%;
+  }
+}
+
 .is-blurred {
   filter: blur(2px);
   -webkit-filter: blur(2px);
   opacity: 0.9;
+}
+
+.height-0 {
+  height: 0;
+}
+
+.display-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.display-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.err-msg {
+  color: red;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.red {
+  color: #ED1B26;
+}
+
+.pagination-wrapper {
+  display: flex;
+  margin-top: 20px;
+  > ul {
+    margin-left: auto;
+  }
+  li {
+    &:hover, &:focus {
+      border-color: #d9d9d9;
+      a { color: #000 }
+    }
+    a, a:hover {
+      font-family: GSBold;
+      color: #000;
+    }
+  }
+  .ant-pagination-item-active {
+    font-weight: 600;
+    color: #000;
+    background-color: #ED1B26;
+    border-color: #C5C5C5;
+  }
+}
+
+.ant-tooltip-inner {
+  color: #334056 !important;
+  background-color: #fff !important;
+  // border: solid 1px red;
+  border-radius: 10px !important;
+}
+
+.ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  border-bottom-color: #fff !important;
 }
