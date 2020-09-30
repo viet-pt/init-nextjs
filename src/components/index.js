@@ -9,6 +9,7 @@ import ProgressTurn from './CommonComponents/ProgressTurn/ProgressTurn.js';
 import ScrollTop from './CommonComponents/ScrollTop/ScrollTop.js';
 import Carousel from './CommonComponents/Carousel/Carousel.js';
 import Layout from './CommonComponents/Layout/Layout.js';
+import TextArea from './CommonComponents/TextArea/TextArea.js';
 import { Notification } from './CommonComponents/Notification/Notification.js';
 
 export {
@@ -24,4 +25,5 @@ export {
   Notification,
   Layout,
   InputSearch,
+  TextArea,
 };

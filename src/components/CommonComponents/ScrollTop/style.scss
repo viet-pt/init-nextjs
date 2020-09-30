@@ -5,9 +5,18 @@
   bottom: 10px;
   right: 25px;
   cursor: pointer;
-  background-color: #3eaae4;
+  background-color: #1f7ed0;
+  border-radius: 100px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   &__icon {
     padding: 8px;
+    width: 35px !important;
+    height: auto;
   }
 }
 .show-button {

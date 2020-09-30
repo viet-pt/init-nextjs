@@ -4,19 +4,14 @@ import { postRequest } from "./_http";
 const baseURL = BACKEND_API;
 
 export const UserService = {
-  login: function (data, successCallback, failCallback) {
-    const URL = `${baseURL}/authen_msisdn`;
+  sendOtp: function (data, successCallback, failCallback) {
+    const URL = `${baseURL}/send_otp`;
     return postRequest(URL, data, {}, successCallback, failCallback);
   },
 
-  logout: function (data, successCallback, failCallback) {
-    const URL = `${baseURL}/authen_logout`;
+  apiReport: function (data, successCallback, failCallback) {
+    const URL = `${baseURL}/api_report`;
     return postRequest(URL, data, {}, successCallback, failCallback);
   },
 
-  register: function (data, successCallback, failCallback) {
-    const URL = `${baseURL}/authen_register`;
-    return postRequest(URL, data, {}, successCallback, failCallback);
-  },
-  
 }

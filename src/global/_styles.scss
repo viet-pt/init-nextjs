@@ -1,9 +1,10 @@
 @import "~global/_mixins.scss";
 
 @font-face {
-  font-family: "Montserrat";
-  src: url('/font/Montserrat-Regular.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('/static/font/Montserrat-Regular.otf') format('opentype');
 }
+
 @font-face {
   font-family: "GoogleSans";
   src: url('/font/GoogleSans-Regular.otf') format('opentype');
@@ -17,19 +18,16 @@
   src: url('/font/GoogleSans-Bold.otf') format('opentype');
 }
 
+
 .app-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.body-content {
-  min-height: 80vh;
 }
 
 .modal-content {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  top: 20vh;
 }
 
 .pointer {
@@ -331,7 +329,7 @@ input[type="month"] {
 }
 
 .btn-hover {
-  transition: all 0.5s;
+  @include transition(all 0.5s);
   color: rgba(255, 255, 255, 1);
   position: relative;
   &:focus {
@@ -347,7 +345,7 @@ input[type="month"] {
     z-index: 1;
     opacity: 0;
     background-color: rgba(255,255,255,0.4);
-    transition: all 0.3s;
+    @include transition(all 0.3s);
   }
   &:hover::before{
     opacity: 1;
@@ -386,11 +384,17 @@ input[type="month"] {
 .err-msg {
   color: red;
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 12px;
+  text-align: right;
+  min-height: 18px;
 }
 
-.red {
-  color: #ED1B26;
+.modal-backdrop {
+  z-index: 100 !important;
+}
+
+.ant-notification {
+  z-index: 200;
 }
 
 .pagination-wrapper {

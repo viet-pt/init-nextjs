@@ -1,0 +1,34 @@
+@import "~global/_mixins.scss";
+
+.footer {
+  background-color: #0451a1;
+  width: 100%;
+  height: auto;
+  > div {
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    height: 120px;
+    width: auto;
+    margin-right: 40px;
+  }
+  &__content {
+    margin-bottom: 10px;
+    line-height: 21px;
+    text-align: left;
+    color: #fff;
+    h4 {
+      color: #fff;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  @include mobile {
+    &__content {
+      font-size: 11px;
+    }
+    align-items: flex-start;
+  }
+}

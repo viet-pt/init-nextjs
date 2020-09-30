@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import ScrollTop from '../ScrollTop/ScrollTop';
 
 export default function Layout({ title, children, video, image, description }) {
-  const des = "Sản Phẩm Vẩy nến";
+  const des = "Hệ thống quản lý danh sách không quảng cáo";
   return (
     <div className="app-wrapper">
       <Head>
@@ -22,7 +22,7 @@ export default function Layout({ title, children, video, image, description }) {
         <meta property="og:image" content={image || "https://zekangg.tk/img/logo.png"} />
         <meta property="og:description" content={description || des} />
         <meta property="description" content={description || des} />
-        <link rel="icon" type="image/png" href="/static/imgs/logo.png" />
+        <link rel="icon" type="image/png" href="/static/imgs/logo.svg" />
         {!!video && <meta property='og:video' content={video} />}
         {!!video && <meta property='video' content={video} />}
       </Head>

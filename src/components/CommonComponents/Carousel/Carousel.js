@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import { default as CarouselLib } from 'react-bootstrap/Carousel';
 
-const Carousel = ({ list, hidePrevNextIcon, customClass, customIndicator }) => {
+const Carousel = ({ list, hidePrevNextIcon, hideIndicator, customClass, customIndicator }) => {
 
   if (!list || !list.length) {
     return null;
@@ -10,7 +10,7 @@ const Carousel = ({ list, hidePrevNextIcon, customClass, customIndicator }) => {
 
   return (
     <div className={`carousel-wrapper ${customClass || ''} 
-      ${customIndicator ? 'custom-indicator' : ''}`}>
+      ${customIndicator ? 'custom-indicator' : ''} ${hideIndicator ? 'hide-indicator' : ''}`}>
       <CarouselLib controls={!hidePrevNextIcon}>
         {list.map((item, index) => (
           <CarouselLib.Item key={index} >

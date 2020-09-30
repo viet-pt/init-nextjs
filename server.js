@@ -12,14 +12,14 @@ app.prepare().then(() => {
     const server = express();
     server.use(cookieParser())
     server.use("/static", express.static(__dirname + "/static"));
-    server.use("/api", createProxyMiddleware({
+    server.use("/apiback", createProxyMiddleware({
         target: dev ? process.env.API_PRODUCTION : process.env.API_PRODUCTION,
         logLevel: 'debug',
         changeOrigin: true,
         headers: {
             "Connection": "keep-alive"
         },
-        pathRewrite: function (path, req) { return path.replace('/api/', '/') }
+        pathRewrite: function (path, req) { return path.replace('/apiback/', '/') }
     }))
     server.use(handle);
     server.listen(process.env.PORT || 3000, () => {

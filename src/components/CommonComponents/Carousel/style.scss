@@ -1,5 +1,11 @@
+@import "~global/_mixins.scss";
+
 .carousel-wrapper {
   cursor: pointer;
+  height: 488px;
+  @include mobile {
+    height: 140px;
+  }
   a {
     text-decoration: none !important;
     color: #000;
@@ -22,6 +28,11 @@
       h3 {
         font-size: 28px;
       }
+    }
+  }
+  &.hide-indicator {
+    .carousel > .carousel-indicators {
+      display: none;
     }
   }
   &.custom-indicator {

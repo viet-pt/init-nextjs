@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/fontawesome-free-solid';
+import { faChevronUp } from '@fortawesome/fontawesome-free-solid';
 class ScrollTop extends React.PureComponent {
   state = {
     showButton: false
@@ -38,7 +38,7 @@ class ScrollTop extends React.PureComponent {
         onClick={this.goToTop}>
         <FontAwesomeIcon
           className="scroll__icon"
-          icon={faArrowUp}
+          icon={faChevronUp}
           color="#fff"
           size="3x"
         />
