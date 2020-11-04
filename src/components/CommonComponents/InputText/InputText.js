@@ -16,6 +16,8 @@ const InputText = ({ value, name, title, handleOnChange, onEnter, autoFocus, pla
   const handleOnKeyDown = (e) => {
     if (e.keyCode === 13) {
       onEnter();
+    } else if (e.keyCode === 38 || e.keyCode === 40) {
+      e.preventDefault();
     }
   }
 

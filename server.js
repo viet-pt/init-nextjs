@@ -19,7 +19,9 @@ app.prepare().then(() => {
         headers: {
             "Connection": "keep-alive"
         },
-        pathRewrite: function (path, req) { return path.replace('/apiback/', '/') }
+        pathRewrite: function (path, req) {
+            return path.replace('/apiback/', '/')
+        }
     }))
     server.use(handle);
     server.listen(process.env.PORT || 3000, () => {
