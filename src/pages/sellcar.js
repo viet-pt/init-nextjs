@@ -10,8 +10,8 @@ const sellcar = (props) => {
   )
 }
 
-export default React.memo(sellcar);
-
-// export const getServerSideProps = async () => {
+// sellcar.getInitialProps = async () => {
   
 // }
+
+export default React.memo(sellcar);

@@ -23,13 +23,16 @@ function handleHttpError(error) {
 
 function transformConfig(config) {
   const requestTime = Date.now();	
+  const token = sessionStorage.getItem('token');
   const headers = {
     'Content-Type': 'application/json',
     RequestTime: requestTime,	
+    Authorization: `Bearer ${token}`,
     ...config.headers,
   };
 
   config.headers = headers;
+  config.timeout = 30000;
   return config;
 }
 
@@ -48,9 +51,9 @@ function makeHttpRequest(apiCall, successCallBack, failCallBack, transformFunc) 
   });
 }
 
-export function getRequest(url, config = {}, successCallBack, failCallBack) {
+export function getRequest(url, config = {}, successCallBack, failCallBack, transformFunc) {
   transformConfig(config);
-  return makeHttpRequest(() => axios.get(url, config), successCallBack, failCallBack);
+  return makeHttpRequest(() => axios.get(url, config), successCallBack, failCallBack, transformFunc);
 }
 
 export function postRequest(url, data, config = {}, successCallBack, failCallBack, transformFunc) {
@@ -69,12 +72,12 @@ export async function postRequestNext(url, data, config = {}) {
   }
 }
 
-export function putRequest(url, data, config = {}, successCallBack, failCallBack) {
+export function putRequest(url, data, config = {}, successCallBack, failCallBack, transformFunc) {
   transformConfig(config);
-  return makeHttpRequest(() => axios.put(url, data, config), successCallBack, failCallBack);
+  return makeHttpRequest(() => axios.put(url, data, config), successCallBack, failCallBack, transformFunc);
 }
 
-export function deleteRequest(url, data, config = {}, successCallBack, failCallBack) {
+export function deleteRequest(url, data, config = {}, successCallBack, failCallBack, transformFunc) {
   transformConfig(config);
-  return makeHttpRequest(() => axios.delete(url, data, config), successCallBack, failCallBack);
+  return makeHttpRequest(() => axios.delete(url, data, config), successCallBack, failCallBack, transformFunc);
 }

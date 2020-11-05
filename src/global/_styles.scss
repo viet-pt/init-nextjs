@@ -7,15 +7,15 @@
 
 @font-face {
   font-family: "GoogleSans";
-  src: url('/font/GoogleSans-Regular.otf') format('opentype');
+  src: url('/static/font/GoogleSans-Regular.otf') format('opentype');
 }
 @font-face {
   font-family: "GSMedium";
-  src: url('/font/GoogleSans-Medium.otf') format('opentype');
+  src: url('/static/font/GoogleSans-Medium.otf') format('opentype');
 }
 @font-face {
   font-family: "GSBold";
-  src: url('/font/GoogleSans-Bold.otf') format('opentype');
+  src: url('/static/font/GoogleSans-Bold.otf') format('opentype');
 }
 
 
@@ -435,3 +435,36 @@ input[type="month"] {
 #__next-prerender-indicator {
   display: none;
 }
+
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.fa-1x {
+  font-size: 1em;
+}
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+

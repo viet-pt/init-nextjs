@@ -17,8 +17,18 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <LocaleProvider>
         <ProgressTurn />
-        <Component {...pageProps}/>
+        <Component {...pageProps} />
       </LocaleProvider>
     </Provider>
   )
+}
+
+App.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {}
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return { pageProps }
 }

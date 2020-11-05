@@ -10,8 +10,8 @@ const contact = (props) => {
   )
 }
 
-export default React.memo(contact);
-
-// export const getServerSideProps = async () => {
+// contact.getInitialProps = async () => {
   
 // }
+
+export default React.memo(contact);
