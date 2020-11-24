@@ -1,6 +1,8 @@
 import { ADD_USER_INFO, REMOVE_USER_INFO, AuthorizeAction } from "stores/constant";
 
-const initialState = {};
+const initialState = {
+  authorized: false
+};
 
 export function userReducer(state = initialState, action) {
   switch (action.type) {

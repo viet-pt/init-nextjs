@@ -3,19 +3,37 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import { rootReducer } from './reducer';
+import { persistStore, persistReducer } from 'redux-persist';
+import localStorage from 'redux-persist/lib/storage';
 
-let store
+const expireReducer = require('redux-persist-expire');
+const day = 86400;
+
+const persistConfig = {
+  key: 'root',
+  storage: localStorage,
+  whitelist: ['authorizedReducer'],
+  transforms: [
+    expireReducer('authorizedReducer', {
+      expireSeconds: 7 * day,
+      autoExpire: true,
+    }),
+  ],
+};
+
+let store;
 
 function initStore(initialState) {
+  const presistedReducer = persistReducer(persistConfig, rootReducer);
   return createStore(
-    rootReducer,
+    presistedReducer,
     initialState,
     composeWithDevTools(applyMiddleware(thunkMiddleware))
-  )
+  );
 }
 
 export const initializeStore = (preloadedState) => {
-  let _store = store ?? initStore(preloadedState)
+  let _store = store ?? initStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
   // with the current state in the store, and create a new store
@@ -37,6 +55,7 @@ export const initializeStore = (preloadedState) => {
 }
 
 export function useStore(initialState) {
-  const store = useMemo(() => initializeStore(initialState), [initialState])
-  return store
+  const store = useMemo(() => initializeStore(initialState), [initialState]);
+  const persistor = persistStore(store);
+  return { store, persistor };
 }
