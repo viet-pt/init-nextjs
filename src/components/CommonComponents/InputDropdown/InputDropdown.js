@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 
-const InputDropdown = ({ list, name, title, handleOnChange, placeholder, errorMsg, customClass }) => {
-  const [value, setValue] = useState(null);
+const InputDropdown = ({ value, list, name, title, handleOnChange, placeholder, errorMsg, customClass, disabled, showTooltip }) => {
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    const data = list.filter(item => item.value === value || item.value?.toString() === value?.toString())[0];
+    setText(data?.text || '');
+  }, [value, list]);
 
   const onSelect = (item) => {
-    setValue(item.text);
+    setText(item.text);
     handleOnChange(item, name);
-  }
-
-  if (!list || list.length === 0) {
-    return null;
   }
 
   return (
     <>
       <div className={`input-dropdown ${customClass || ''}`}>
         {title && <span className="input-dropdown__title">{title}</span>}
-        <Dropdown>
-          <Dropdown.Toggle>
-            {value || placeholder || list[0].text}
-          </Dropdown.Toggle>
+          <Dropdown>
+            <Dropdown.Toggle disabled={disabled}>
+              {text || placeholder || list[0]?.text}
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            {list.map((item, index) => (
-              <Dropdown.Item onSelect={() => onSelect(item)} key={index}>
-                {item.text}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
+            <Dropdown.Menu flip={false}>
+              {list.map((item, index) => (
+                <Dropdown.Item onSelect={() => onSelect(item)} key={index}>
+                  {item.text}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
       </div>
 
       {errorMsg &&
@@ -42,15 +43,15 @@ const InputDropdown = ({ list, name, title, handleOnChange, placeholder, errorMs
 }
 
 InputDropdown.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.any,
   list: PropTypes.array,
   handleOnChange: PropTypes.func,
 };
 
 InputDropdown.defaultProps = {
   value: '',
-  list: [],   
-  handleOnChange: () => {},
+  list: [],
+  handleOnChange: () => { },
 };
 
 export default React.memo(InputDropdown);

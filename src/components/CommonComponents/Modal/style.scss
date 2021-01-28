@@ -1,14 +1,13 @@
 .modal-wrapper {
-  .modal-content {
-    border-radius: 15px;
-    top: 25vh;
+  .ant-modal-content {
+    border-radius: 10px;
+    color: #000;
   }
-  .modal-header {
+  .ant-modal-header {
     position: relative;
-    background-color: #1f7ed0;
     color: #fff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     .modal-title {
       margin: 0 auto;
     }

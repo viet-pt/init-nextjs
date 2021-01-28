@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ProgressTurn } from 'components';
 import LocaleProvider from 'utils/providers/LocaleProvider';
 import { useStore } from 'stores';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -16,7 +15,6 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <LocaleProvider>
-          <ProgressTurn />
           <Component {...pageProps} />
         </LocaleProvider>
       </PersistGate>

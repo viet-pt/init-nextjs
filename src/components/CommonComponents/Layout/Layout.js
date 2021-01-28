@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ScrollTop from '../ScrollTop/ScrollTop';
+import ProgressTurn from '../ProgressTurn/ProgressTurn';
 
 export default function Layout({ title, children, video, image, description }) {
   const des = "Hệ thống quản lý danh sách không quảng cáo";
@@ -34,6 +35,7 @@ export default function Layout({ title, children, video, image, description }) {
         </div>
         <Footer />
       </main>
+      <ProgressTurn />
       <ScrollTop />
     </div>
   )

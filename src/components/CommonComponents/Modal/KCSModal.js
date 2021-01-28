@@ -1,37 +1,26 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from 'antd';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-const KCSModal = props => {
-  const {
-    isOpenModal,
-    title,
-    content,
-    closeButton,
-    closeModal,
-    confirmButton,
-    confirmAction,
-  } = props;
+const KCSModal = ({ isOpenModal, title, content, closeButton, closeModal, confirmButton, confirmAction }) => {
+  let btn = [
+    <Button type="primary" onClick={confirmAction || closeModal}>{confirmButton || 'OK'}</Button>
+  ]
+
+  if (closeButton) {
+    btn = [<Button onClick={closeModal}>{closeButton || 'Cancel'}</Button>, ...btn];
+  }
 
   return (
-    <Modal show={isOpenModal} onHide={closeModal} className="modal-wrapper">
-      <Modal.Header closeButton>
-        <Modal.Title>{title}</Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>{content}</Modal.Body>
-
-      <Modal.Footer>
-        {closeButton &&
-          <Button onClick={closeModal} className="close-btn">
-            {closeButton || 'Đóng'}
-          </Button>
-        }
-        <Button onClick={confirmAction || closeModal} className="confirm-btn">
-          {confirmButton || 'OK'}
-        </Button>
-      </Modal.Footer>
+    <Modal
+      className="modal-wrapper"
+      title={title || "Thông báo"}
+      visible={isOpenModal}
+      onCancel={closeModal}
+      footer={btn}
+    >
+      {content}
     </Modal>
   );
 };
@@ -48,7 +37,7 @@ KCSModal.propTypes = {
 
 KCSModal.defaultProps = {
   isOpenModal: false,
-  closeModal: () => {},
+  closeModal: () => { },
 };
 
 export default React.memo(KCSModal);
