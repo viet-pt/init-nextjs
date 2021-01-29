@@ -1,37 +1,57 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.scss';
-import { default as CarouselLib } from 'react-bootstrap/Carousel';
+import { Carousel as CarouselAnt } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/fontawesome-free-solid';
 
-const Carousel = ({ list, hidePrevNextIcon, hideIndicator, customClass, customIndicator }) => {
+const Carousel = ({ list, autoplay, customClass }) => {
+  let refCarousel = useRef(null);
+
+  const onClickLeft = () => {
+    refCarousel.prev();
+  }
+
+  const onClickRight = () => {
+    refCarousel.next();
+  }
 
   if (!list || !list.length) {
     return null;
   }
 
   return (
-    <div className={`carousel-wrapper ${customClass || ''} 
-      ${customIndicator ? 'custom-indicator' : ''} ${hideIndicator ? 'hide-indicator' : ''}`}>
-      <CarouselLib controls={!hidePrevNextIcon}>
+    <div className={`carousel-wrapper ${customClass || ''}`}>
+      <CarouselAnt autoplay={autoplay} ref={el => (refCarousel = el)}>
         {list.map((item, index) => (
-          <CarouselLib.Item key={index} >
+          <div key={index} className="position-relative">
+            <FontAwesomeIcon 
+              icon={faAngleLeft} color="#fff"
+              className="arrow-icon"
+              onClick={onClickLeft}
+            />
             <img
-              className="d-block w-100"
               src={item.img}
               alt="img"
               title={item.title}
             />
-            {item.title &&
-              <CarouselLib.Caption>
-                <h3 className="title-hover">
-                  {item.title}
-                </h3>
-              </CarouselLib.Caption>
-            }
-          </CarouselLib.Item>
+            <FontAwesomeIcon
+              icon={faAngleRight} color="#fff"
+              className="arrow-icon --right"
+              onClick={onClickRight}
+            />
+            {/* <h3 className="title-hover">
+              {item.title}
+            </h3> */}
+          </div>
         ))}
-      </CarouselLib>
+      </CarouselAnt>
     </div>
   )
 }
+
+Carousel.defaultProps = {
+  // autoplay: true,
+  list: [],
+};
 
 export default React.memo(Carousel);

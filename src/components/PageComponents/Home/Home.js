@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import './style.scss';
-import { Carousel, InputDropdown } from 'components';
+import { Carousel, KCSModal } from 'components';
 
 const LIST_SLIDE = [
-  { img: '/static/imgs/banner1.jpg' },
-  { img: '/static/imgs/banner2.jpg' },
+  { img: '/static/imgs/banner1.jpg', title: "Callback function called after the current index changes" },
+  { img: '/static/imgs/banner2.jpg', title: "Go to slide index, if dontAnimate=true, it happens without animation" },
 ];
-
-const list = [
-  { value: 123, text: '123' },
-  { value: 123, text: '123' },
-  { value: 123, text: '123' },
-  { value: 123, text: '123' },
-]
 
 const Home = () => {
   const [isOpenModal, setOpenModal] = useState(false);
@@ -31,11 +24,15 @@ const Home = () => {
         <h4>Cơ cấu tổ chức</h4>
       </section>
 
-      <InputDropdown
-        list={list}
-        handleOnChange={() => { }}
-        placeholder="Tải trọng (tấn)"
-      />
+      <div className="w-25">
+        <KCSModal
+          isOpenModal={isOpenModal}
+          closeModal={() => setOpenModal(false)}
+          title="Đăng ký thành công"
+          content="Hệ thống sẽ phê duyệt thông tin của bạn trong vài giờ và sẽ gửi email cho bạn khi xác nhận thông tin của bạn thành công. Xin cảm ơn!"
+        />
+      </div>
+
     </div>
   );
 }

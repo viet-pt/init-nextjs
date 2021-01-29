@@ -3,7 +3,7 @@ import { Modal, Button } from 'antd';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-const KCSModal = ({ isOpenModal, title, content, closeButton, closeModal, confirmButton, confirmAction }) => {
+const KCSModal = ({ isOpenModal, title, content, closeButton, closeModal, confirmButton, confirmAction, size }) => {
   let btn = [
     <Button type="primary" onClick={confirmAction || closeModal}>{confirmButton || 'OK'}</Button>
   ]
@@ -19,6 +19,7 @@ const KCSModal = ({ isOpenModal, title, content, closeButton, closeModal, confir
       visible={isOpenModal}
       onCancel={closeModal}
       footer={btn}
+      width={size === "xl" ? 1150 : size === "lg" ? 800 : 520}
     >
       {content}
     </Modal>

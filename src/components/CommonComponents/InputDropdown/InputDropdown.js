@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
-import { Dropdown } from 'react-bootstrap';
+import { Menu, Dropdown } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortDown } from '@fortawesome/fontawesome-free-solid';
 
-const InputDropdown = ({ value, list, name, title, handleOnChange, placeholder, errorMsg, customClass, disabled, showTooltip }) => {
+const InputDropdown = ({ value, list, name, title, handleOnChange, placeholder, errorMsg, customClass,
+  disabled, isTwoLine, flip }) => {
   const [text, setText] = useState('');
 
   useEffect(() => {
@@ -16,23 +19,26 @@ const InputDropdown = ({ value, list, name, title, handleOnChange, placeholder, 
     handleOnChange(item, name);
   }
 
+  const menu = (
+    <Menu>
+      {list.map((item, index) => (
+        <Menu.Item onClick={() => onSelect(item)} key={index}>
+          {item.text}
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
+
   return (
     <>
-      <div className={`input-dropdown ${customClass || ''}`}>
+      <div className={`input-dropdown ${customClass || ''} ${isTwoLine ? 'two-line' : ''}`}>
         {title && <span className="input-dropdown__title">{title}</span>}
-          <Dropdown>
-            <Dropdown.Toggle disabled={disabled}>
-              {text || placeholder || list[0]?.text}
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu flip={false}>
-              {list.map((item, index) => (
-                <Dropdown.Item onSelect={() => onSelect(item)} key={index}>
-                  {item.text}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+        <Dropdown overlay={menu} trigger={['click']} placement={flip ? "topCenter" : "bottomCenter"} disabled={disabled}>
+          <button disabled={disabled}>
+            <span>{text || placeholder}</span>
+            <FontAwesomeIcon icon={faSortDown} color="#000" />
+          </button>
+        </Dropdown>
       </div>
 
       {errorMsg &&
@@ -52,6 +58,7 @@ InputDropdown.defaultProps = {
   value: '',
   list: [],
   handleOnChange: () => { },
+  isTwoLine: true
 };
 
 export default React.memo(InputDropdown);
