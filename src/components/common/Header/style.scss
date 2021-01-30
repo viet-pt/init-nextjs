@@ -20,16 +20,6 @@
 	}
 }
 
-.sticky {
-	position: fixed;
-	height: 80px;
-	top: 0;
-	transition: all .4s;
-	~ .main-page {
-		padding-top: 90px;
-	}
-}
-
 .header-wrapper-top {
 	background-color: #ED1B26;
 	transition: all .4s;
@@ -46,13 +36,21 @@
 }
 .header-top {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: flex-end;
-	color: #F3F3F3;
-	font-size: 15px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	transition: all .3s;
+	&__left {
+		cursor: pointer;
+		color: #fff;
+	}
+	&__right {
+		display: flex;
+		align-items: center;
+		color: #F3F3F3;
+		font-size: 15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		transition: all .3s;
+	}
 	&__user {
 		position: relative;
 		cursor: pointer;

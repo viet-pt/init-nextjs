@@ -1,5 +1,5 @@
 import React from 'react';
-import { SellCar } from 'components/PageComponents';
+import { SellCar } from 'components/page';
 import { Layout } from 'components';
 
 const sellcar = (props) => {

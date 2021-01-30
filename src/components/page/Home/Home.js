@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 import { Carousel, KCSModal } from 'components';
+import i18n from 'utils/i18n';
 
 const LIST_SLIDE = [
   { img: '/static/imgs/banner1.jpg', title: "Callback function called after the current index changes" },
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <div className="home-page container">
       <Carousel list={LIST_SLIDE} />
+      <h3>{i18n.IDS_HELLO}</h3>
 
       <section className="home-page__intro">
         <h3 id="#intro" onClick={() => setOpenModal(true)}>Giới thiệu</h3>
@@ -32,7 +34,6 @@ const Home = () => {
           content="Hệ thống sẽ phê duyệt thông tin của bạn trong vài giờ và sẽ gửi email cho bạn khi xác nhận thông tin của bạn thành công. Xin cảm ơn!"
         />
       </div>
-
     </div>
   );
 }

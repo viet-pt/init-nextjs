@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
-import InputText from 'components/CommonComponents/InputText/InputText';
+import InputText from 'components/common/InputText/InputText';
 
 const InputSearch = ({ value, handleOnChange, onSearch, customClass, placeholder }) => {
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Home } from 'components/PageComponents';
+import { Home } from 'components/page';
 import { Layout } from 'components';
-
-function Index(props) {
+function Homepage(props) {
   return (
     <Layout>
         <Home {...props} />
@@ -10,4 +9,8 @@ function Index(props) {
    )
 }
 
-export default Index;
+Homepage.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+})
+
+export default Homepage;

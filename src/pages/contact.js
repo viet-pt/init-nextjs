@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contact } from 'components/PageComponents';
+import { Contact } from 'components/page';
 import { Layout } from 'components';
 
 const contact = (props) => {
@@ -10,8 +10,8 @@ const contact = (props) => {
   )
 }
 
-// contact.getInitialProps = async () => {
-  
-// }
+contact.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+})
 
-export default React.memo(contact);
+export default contact;

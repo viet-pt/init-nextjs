@@ -1,5 +1,5 @@
 import React from 'react';
-import { NotFoundPage } from 'components/PageComponents';
+import { NotFoundPage } from 'components/page';
 import { Layout } from 'components';
 
 const notfound = () => {
