@@ -11,16 +11,16 @@ import 'global/_mixins.scss';
 import 'global/_styles.scss';
 
 function App({ Component, pageProps }) {
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
 
-  useEffect(() => {
-    const handler = {
-      get: function(target, prop) {
-        return t(`${prop}`);
-      }
-    };
-    window.i18n = new Proxy({}, handler);
-  }, []);
+  // useEffect(() => {
+  //   const handler = {
+  //     get: function(target, prop) {
+  //       return t(`${prop}`);
+  //     }
+  //   };
+  //   window.i18n = new Proxy({}, handler);
+  // }, []);
 
   const { store, persistor } = useStore();
   return (

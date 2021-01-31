@@ -6,5 +6,5 @@
   "IDS_PACK_DATA": "Gói cước",
   "IDS_VINAPHONE_PLUS": "Vinaphone+",
   "IDS_SUPPORT": "Hỗ trợ",
-  "IDS_HELLO": "Xin chào"
+  "IDS_HELLO": "Xin chào {{name}}"
 }

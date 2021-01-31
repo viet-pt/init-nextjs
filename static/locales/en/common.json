@@ -6,5 +6,5 @@
   "IDS_PACK_DATA": "Pack of data",
   "IDS_VINAPHONE_PLUS": "Vinaphone+",
   "IDS_SUPPORT": "Support",
-  "IDS_HELLO": "Hello"
+  "IDS_HELLO": "Hello {{name}}"
 }
