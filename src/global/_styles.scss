@@ -100,8 +100,12 @@ button:focus {
   font-weight: bold;
 }
 
-.text-600 {
+.medium {
   font-weight: 600;
+}
+
+.margin-auto {
+  margin: 0 auto;
 }
 
 ul, li {
@@ -310,7 +314,7 @@ input[type="month"] {
   overflow: hidden;
   div, div:hover, a, a:hover {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 }
 
@@ -321,11 +325,8 @@ input[type="month"] {
 }
 
 .image-hover:hover img {
-  transform: scale(1.2);
-}
-
-.image-hover:hover .thumb-title {
-  background: #0a62fb;
+  transform: scale(1.15);
+  opacity: 0.8;
 }
 
 .btn-hover {
@@ -389,6 +390,10 @@ input[type="month"] {
   min-height: 18px;
 }
 
+.pink {
+  color: #fb4e77;
+}
+
 .modal-backdrop {
   z-index: 100 !important;
 }
@@ -421,8 +426,14 @@ input[type="month"] {
   }
 }
 
+html {
+  font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
+
 .body-content {
   min-height: 70vh;
+  padding-top: 80px;
+  font-size: 1.4rem;
 }
 
 .ant-tooltip-inner {
@@ -430,6 +441,14 @@ input[type="month"] {
   background-color: #fff !important;
   // border: solid 1px red;
   border-radius: 10px !important;
+}
+
+.ant-input-prefix {
+  min-width: 25px;
+}
+
+.ant-form-item-explain, .ant-form-item-extra {
+  font-size: 12px;
 }
 
 .ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
