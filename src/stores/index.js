@@ -3,30 +3,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import { rootReducer } from './reducer';
-import { persistStore, persistReducer } from 'redux-persist';
-import localStorage from 'redux-persist/lib/storage';
-
-const expireReducer = require('redux-persist-expire');
-const day = 86400;
-
-const persistConfig = {
-  key: 'root',
-  storage: localStorage,
-  whitelist: ['authorizedReducer'],
-  transforms: [
-    expireReducer('authorizedReducer', {
-      expireSeconds: 7 * day,
-      autoExpire: true,
-    }),
-  ],
-};
 
 let store;
 
 function initStore(initialState) {
-  const presistedReducer = persistReducer(persistConfig, rootReducer);
   return createStore(
-    presistedReducer,
+    rootReducer,
     initialState,
     composeWithDevTools(applyMiddleware(thunkMiddleware))
   );
@@ -56,6 +38,5 @@ export const initializeStore = (preloadedState) => {
 
 export function useStore(initialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
-  const persistor = persistStore(store);
-  return { store, persistor };
+  return store
 }

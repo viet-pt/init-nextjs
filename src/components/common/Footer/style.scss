@@ -1,34 +1,47 @@
 @import "~global/_mixins.scss";
 
 .footer {
-  background-color: #0451a1;
   width: 100%;
-  height: auto;
-  > div {
-    padding: 25px 40px;
-    display: flex;
-    align-items: center;
-  }
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-top: solid 5px #fb8a8e;
   &__logo {
-    height: 120px;
+    height: 23px;
     width: auto;
-    margin-right: 40px;
+    margin-bottom: 20px;
   }
   &__content {
-    margin-bottom: 10px;
-    line-height: 21px;
-    text-align: left;
-    color: #fff;
-    h4 {
-      color: #fff;
-      font-size: 18px;
-      line-height: 24px;
+   font-size: 1.3rem;
+   color: #b6b3b3;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    > img {
+      width: auto;
+      height: 37px;
     }
   }
-  @include mobile {
-    &__content {
-      font-size: 11px;
+  &__store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: RMedium;
+    &--app-store {
+      margin: 0 15px;
     }
-    align-items: flex-start;
+    img {
+      width: auto;
+      height: 28px;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+  @include mobile {
+    
   }
 }

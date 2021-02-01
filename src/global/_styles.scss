@@ -1,21 +1,20 @@
 @import "~global/_mixins.scss";
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/static/font/Montserrat-Regular.otf') format('opentype');
-}
-
-@font-face {
-  font-family: "GoogleSans";
-  src: url('/static/font/GoogleSans-Regular.otf') format('opentype');
+  font-family: "Roboto";
+  src: url('/static/font/Roboto-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: "GSMedium";
-  src: url('/static/font/GoogleSans-Medium.otf') format('opentype');
+  font-family: "Rlight";
+  src: url('/static/font/Roboto-Light.ttf') format('truetype');
 }
 @font-face {
-  font-family: "GSBold";
-  src: url('/static/font/GoogleSans-Bold.otf') format('opentype');
+  font-family: "RMedium";
+  src: url('/static/font/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: "RBold";
+  src: url('/static/font/Roboto-Bold.ttf') format('truetype');
 }
 
 
@@ -23,10 +22,10 @@
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
+  font-family: Roboto;
 }
 
 .modal-content {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   top: 10vh;
 }
 
@@ -40,6 +39,18 @@
 
 .position-relative {
   position: relative;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+button, input, optgroup, select, textarea {
+  font-size: 1.4rem;
+}
+
+input, textarea {
+  font-family: Roboto;
 }
 
 .margin-top-20 {
@@ -97,11 +108,11 @@ button:focus {
 }
 
 .bold {
-  font-weight: bold;
+  font-family: RBold;
 }
 
 .medium {
-  font-weight: 600;
+  font-family: RMedium;
 }
 
 .margin-auto {
@@ -126,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   border: none;
   outline: none;
-  font-weight: 600;
+  font-family: RMedium;
   &:hover, &:focus, &:active {
     text-decoration: none;
     background-color: #3eb7e4;
@@ -414,12 +425,12 @@ input[type="month"] {
       a { color: #000 }
     }
     a, a:hover {
-      font-family: GSBold;
+      font-family: RBold;
       color: #000;
     }
   }
   .ant-pagination-item-active {
-    font-weight: 600;
+    font-family: RMedium;
     color: #000;
     background-color: #ED1B26;
     border-color: #C5C5C5;

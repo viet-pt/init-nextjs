@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { ProgressTurn } from 'components';
 import { useStore } from 'stores';
-import { PersistGate } from 'redux-persist/integration/react';
 import { appWithTranslation, useTranslation } from 'utils/i18nconfig';
 
 import "antd/dist/antd.css";
@@ -22,13 +21,11 @@ function App({ Component, pageProps }) {
   //   window.i18n = new Proxy({}, handler);
   // }, []);
 
-  const { store, persistor } = useStore();
+  const store = useStore();
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Component {...pageProps} />
-        <ProgressTurn />
-      </PersistGate>
+      <Component {...pageProps} />
+      <ProgressTurn />
     </Provider>
   )
 }

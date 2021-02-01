@@ -2,6 +2,8 @@ import React from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
 import InputText from 'components/common/InputText/InputText';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/fontawesome-free-solid';
 
 const InputSearch = ({ value, handleOnChange, onSearch, customClass, placeholder }) => {
 
@@ -15,13 +17,13 @@ const InputSearch = ({ value, handleOnChange, onSearch, customClass, placeholder
         handleOnChange={handleOnChange}
         onEnter={onSearch}
       />
-      {value === '' &&
-        <img
-          alt="icon-search"
-          src='/static/imgs/search.svg'
-          className="search__icon"
+      <div className="search__icon">
+        <FontAwesomeIcon
+          icon={faSearch} color="#fff"
+          onClick={onSearch}
+          size="lg"
         />
-      }
+      </div>
     </div>
   );
 }
@@ -33,7 +35,7 @@ InputSearch.propTypes = {
 
 InputSearch.defaultProps = {
   value: '',
-  handleOnChange: () => {}
+  handleOnChange: () => { }
 };
 
 export default React.memo(InputSearch);

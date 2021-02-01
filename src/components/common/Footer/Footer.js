@@ -1,18 +1,29 @@
 import React from 'react';
 import './style.scss';
 
-const Footer = () =>  {
+const Footer = () => {
   return (
-    <div className="footer">
-      <div className="container">
-        <img src='/static/imgs/footer_logo.png' className="footer__logo" alt="logo" />
+    <div className="container">
+      <div className="footer">
+        <img src='/static/imgs/logo-footer.png' className="footer__logo" alt="logo" />
         <div className="footer__content ">
-          <h4>CỤC AN TOÀN THÔNG TIN - BỘ THÔNG TIN VÀ TRUYỀN THÔNG</h4>
-          <div>Chịu trách nhiệm chính: Ông Nguyễn Thành Phúc - Cục trưởng Cục An toàn thông tin.</div>
-          <div>Trụ sở: Tầng 8 Tòa nhà Cục Tần số vô tuyến điện - 115 Trần Duy Hưng - Cầu giấy - Hà Nội.</div>
-          <div>Điện thoại: +84 24 3209 6789   Fax: +84 24 3943 6684</div>
+          <p>Cơ quan quán lý trang Thông tin điện tử tổng hợp: TỔNG CÔNG TY TRUYỀN THÔNG VNPT-MEDIA.</p>
           <br />
-          <div><i>Bản quyền thuộc Cục An toàn thông tin. (Ghi rõ nguồn "Cục An toàn thông tin" khi phát hành lại thông tin từ website này)</i></div>
+          <p>Cơ quan chủ quân: Tập đoàn Bưu chính Viên thông Việt Nam (VNPT)</p>
+          <p>Địa ch Số 57A phố Huỳnh Thúc Kháng, Phường Láng Hạ, Quận Đống Đa, Thành phố Hà Nội, Việt Nam.</p>
+          <p>ĐKKD:0106873188 do sở KH-DT cấp ngày 12/06/2015</p>
+          <p>Giấy phép MXH số: Giấy phép thiết lập trang thông tin điện tử tổng hợp trên mạng số 1366/GP-TTĐT do Sở Thông tin Truyền thông cấp ngày 07/04/2017</p>
+          <p>Email vnptmtedia@vnpt.vn - Điện thoại: 0437722728 - Fax 0437722735</p>
+          <p>Chịu rách nhiệm quản lý nội dung: Ông Dương Thành Long - TGĐ VNPT Media</p>
+        </div>
+
+        <div className="footer__bottom">
+          <img src='/static/imgs/bo-cong-thuong.png' alt="bo-cong-thuong" />
+          <div className="footer__store">
+            <span>Tải app MCA tại:</span>
+            <img src='/static/imgs/app_store.png' className="footer__store--app-store" alt="app" />
+            <img src='/static/imgs/google_play.png' alt="app" />
+          </div>
         </div>
       </div>
     </div>

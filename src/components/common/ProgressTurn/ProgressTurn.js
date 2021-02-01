@@ -12,6 +12,8 @@ const ProgressTurn = () => {
         <Spin size="large" />
       </div>
     )
+  } else {
+    return null;
   }
 }
 

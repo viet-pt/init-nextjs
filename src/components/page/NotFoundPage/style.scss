@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: RBold;
   }
   @include mobile {
     &__header {
@@ -40,8 +40,8 @@
     align-items: center;
     width: 260px;
     margin-top: 40px;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-family: RMedium;
     background-color: #D71925;
     color: #fff;
     display: flex;
@@ -54,8 +54,8 @@
     margin-top: 50px;
   }
   &__content {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 2rem;
+    font-family: RMedium;
     padding: 15px 30px;
   }
 

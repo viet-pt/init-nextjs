@@ -1,0 +1,55 @@
+@import "~global/_mixins.scss";
+
+.menu-header {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000080;
+  width: 100vw;
+  padding: 20px 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  border-top: solid 1px #00000019;
+  font-size: 14px;
+  font-family: RMedium;
+  color: #000;
+  &__body {
+    display: flex;
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    height: 12%;
+  }
+  &__box {
+    display: flex;
+    margin-right: 15%;
+  }
+  h6 {
+    text-transform: uppercase;
+    margin: 0 10px;
+  }
+  .help {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    border-left: 3px solid #FB4E77;
+    cursor: pointer;
+  }
+  li {
+    border: 1px solid #BEBEBE33;
+    padding: 10px 15px;
+    &:hover {
+      background-color: #BEBEBE33;
+      color: #FB4E77;
+    }
+  }
+  img {
+    width: auto;
+    height: 26px;
+  }
+}

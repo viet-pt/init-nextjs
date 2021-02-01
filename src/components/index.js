@@ -11,6 +11,9 @@ import Carousel from './common/Carousel/Carousel.js';
 import Layout from './common/Layout/Layout.js';
 import TextArea from './common/TextArea/TextArea.js';
 import { Notification } from './common/Notification/Notification.js';
+import OutsideClick from './common/OutsideClick/OutsideClick.js';
+import Button from './common/Button/Button.js';
+import Title from './common/Title/Title.js';
 
 export {
   cui,
@@ -26,4 +29,7 @@ export {
   Layout,
   InputSearch,
   TextArea,
+  OutsideClick,
+  Button,
+  Title,
 };
