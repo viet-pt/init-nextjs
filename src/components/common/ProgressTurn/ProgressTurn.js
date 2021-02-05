@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import Spin from 'antd/es/spin';
-import { useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 
 const ProgressTurn = () => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  useEffect(() => {
-    const handleStart = (url) => (url !== router.asPath) && setLoading(true);
-    const handleComplete = (url) => (url === router.asPath) && setLoading(false);
-
-    router.events.on('routeChangeStart', handleStart)
-    router.events.on('routeChangeComplete', handleComplete)
-    router.events.on('routeChangeError', handleComplete)
-
-    return () => {
-      router.events.off('routeChangeStart', handleStart)
-      router.events.off('routeChangeComplete', handleComplete)
-      router.events.off('routeChangeError', handleComplete)
-    }
-  })
+  Router.onRouteChangeStart = () => {
+    setLoading(true);
+  };
+  
+  Router.onRouteChangeComplete = () => {
+    setLoading(false)
+  };
+  
+  Router.onRouteChangeError = () => {
+    setLoading(false)
+  };
 
   if (!loading) {
     return null;
