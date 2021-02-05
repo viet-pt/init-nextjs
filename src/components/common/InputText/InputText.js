@@ -3,6 +3,8 @@ import './style.scss';
 import PropTypes from 'prop-types';
 import cui from '../cui/cui';
 
+const regexNumb = /^[0-9]*$/;
+
 const InputText = ({ value, name, title, handleOnChange, onEnter, autoFocus, placeholder, extensionClass,
   onlyNumber, isPassword, errorMsg, customClass, customTitle }) => {
 
@@ -10,7 +12,15 @@ const InputText = ({ value, name, title, handleOnChange, onEnter, autoFocus, pla
 
   const onChange = (e) => {
     const { value } = e.target;
-    handleOnChange(value, name);
+
+    if (!onlyNumber || value === '') {
+      handleOnChange(value, name);
+      return;
+    }
+    
+    if (regexNumb.test(value)) {
+      handleOnChange(parseInt(value), name);
+    }
   }
 
   const handleOnKeyDown = (e) => {

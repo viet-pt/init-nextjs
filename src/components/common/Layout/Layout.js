@@ -19,6 +19,7 @@ export default function Layout({ title, children, video, image, description }) {
         <meta property="title" content={title || "Chuyện 0h"} />
         <meta property="og:site_name" content="VNPT" />
         <meta property="site_name" content="VNPT" />
+        <meta property="og:locale" content="vi_VN" />
         <meta property="og:type" content="website" />
         <meta property="image" content={image || "/static/imgs/logo.png"} />
         <meta property="og:image" content={image || "/static/imgs/logo.png"} />

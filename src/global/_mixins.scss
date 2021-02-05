@@ -26,7 +26,7 @@ $lg-min: 1600px;
 }
 
 @mixin tablet {
-  @media screen and (max-width: $md-max) and (min-height: 500px) {
+  @media screen and (max-width: $sm-max) and (min-height: 500px) {
     @content;
   }
 }
@@ -75,12 +75,6 @@ $lg-min: 1600px;
 
 @mixin largerDesktop {
   @media (min-width: $sm-min) {
-    @content;
-  }
-}
-
-@mixin smallerDesktop {
-  @media (max-width: $sm-max) {
     @content;
   }
 }

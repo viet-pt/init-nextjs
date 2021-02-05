@@ -17,14 +17,6 @@
   src: url('/static/font/Roboto-Bold.ttf') format('truetype');
 }
 
-
-.app-wrapper {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: relative;
-  font-family: Roboto;
-}
-
 .modal-content {
   top: 10vh;
 }
@@ -42,7 +34,8 @@
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: Roboto;
 }
 
 button, input, optgroup, select, textarea {
@@ -133,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #579bd7;
   padding: 8px 25px;
   border-radius: 15px;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #fff;
   border: none;
   outline: none;
@@ -338,6 +331,7 @@ input[type="month"] {
 .image-hover:hover img {
   transform: scale(1.15);
   opacity: 0.8;
+  border-radius: 5px;
 }
 
 .btn-hover {
@@ -396,7 +390,7 @@ input[type="month"] {
 .err-msg {
   color: red;
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 1.2rem;
   text-align: right;
   min-height: 18px;
 }
@@ -410,7 +404,11 @@ input[type="month"] {
 }
 
 .ant-notification {
-  z-index: 200;
+  z-index: 1200;
+}
+
+.ant-modal-content {
+  border-radius: 8px;
 }
 
 .pagination-wrapper {
@@ -439,11 +437,20 @@ input[type="month"] {
 
 html {
   font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+  font-family: Roboto;
 }
 
 .body-content {
   min-height: 70vh;
   padding-top: 80px;
+  font-size: 1.4rem;
+}
+
+.app-wrapper {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  font-family: Roboto;
   font-size: 1.4rem;
 }
 
@@ -459,7 +466,7 @@ html {
 }
 
 .ant-form-item-explain, .ant-form-item-extra {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
