@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { ProgressTurn } from 'components';
 import { useStore } from 'stores';
 import { appWithTranslation, useTranslation } from 'utils/i18nconfig';
 
@@ -25,7 +24,6 @@ function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Component {...pageProps} />
-      <ProgressTurn />
     </Provider>
   )
 }
