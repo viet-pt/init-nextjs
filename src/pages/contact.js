@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contact } from 'components/page';
+import Contact from 'components/page/Contact/Contact';
 import { Layout } from 'components';
 
 const contact = (props) => {

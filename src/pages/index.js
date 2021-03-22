@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home } from 'components/page';
+import Home from 'components/page/Home/Home';
 import { Layout } from 'components';
 function Homepage(props) {
   return (
