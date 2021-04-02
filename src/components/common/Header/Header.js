@@ -45,40 +45,42 @@ const Header = () => {
   return (
     <div className={`header-wrapper ${fixedHeader ? 'sticky' : ''}`}>
       <OutsideClick onClickOutSide={() => setShowMenu(false)}>
-        <div className={`container header ${openMenuMobile ? 'open-menu' : ''}`}>
-          <Link route='/'>
-            <a className="header__logo mr-lg-3"><img alt="home" src='/static/imgs/logo.png' /></a>
-          </Link>
+        <>
+          <div className={`container header ${openMenuMobile ? 'open-menu' : ''}`}>
+            <Link route='/'>
+              <a className="header__logo mr-lg-3"><img alt="home" src='/static/imgs/logo.png' /></a>
+            </Link>
 
-          <div className="header__group-btn">
-            <InputSearch
-              value={valueSearch}
-              handleOnChange={(value) => setValueSearch(value)}
-              placeholder="Từ khóa tìm kiếm"
-            />
-            <div className="header__cate"><Link route="/"><a>Miễn phí</a></Link></div>
-            <div className="header__cate"><Link route="/dich-vu"><a>Livestream</a></Link></div>
-            <div className="header__cate"><Link route="/lien-he"><a>Video</a></Link></div>
-            <div className="header__cate">Chuyện 0h</div>
-            <div className="header__cate">Share duyên</div>
-            <FontAwesomeIcon
-              icon={faEllipsisH} color="#000"
-              onClick={() => setShowMenu(!showMenu)}
-              size="lg"
-            />
-            <div className="d-lg-none btn-mobile">
+            <div className="header__group-btn">
+              <InputSearch
+                value={valueSearch}
+                handleOnChange={(value) => setValueSearch(value)}
+                placeholder="Từ khóa tìm kiếm"
+              />
+              <div className="header__cate"><Link route="/"><a>Miễn phí</a></Link></div>
+              <div className="header__cate"><Link route="/dich-vu"><a>Livestream</a></Link></div>
+              <div className="header__cate"><Link route="/lien-he"><a>Video</a></Link></div>
+              <div className="header__cate">Chuyện 0h</div>
+              <div className="header__cate">Share duyên</div>
+              <FontAwesomeIcon
+                icon={faEllipsisH} color="#000"
+                onClick={() => setShowMenu(!showMenu)}
+                size="lg"
+              />
+              <div className="d-lg-none btn-mobile">
 
+              </div>
+            </div>
+
+            <div className="d-lg-none header__close-btn" onClick={() => setOpenMenuMobile(!openMenuMobile)}>
+              <div />
             </div>
           </div>
 
-          <div className="d-lg-none header__close-btn" onClick={() => setOpenMenuMobile(!openMenuMobile)}>
-            <div />
+          <div className={`header-menu-wrapper ${showMenu ? "show-menu-header" : ''}`}>
+            <MenuHeader />
           </div>
-        </div>
-
-        <div className={`header-menu-wrapper ${showMenu ? "show-menu-header" : ''}`}>
-          <MenuHeader />
-        </div>
+        </>
       </OutsideClick>
     </div>
   );
