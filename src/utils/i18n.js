@@ -1,4 +1,4 @@
-import { useTranslation } from 'utils/i18nconfig';
+import { useTranslation } from 'utils/i18nConfig';
 
 const handler = {
   get: function (target, prop) {

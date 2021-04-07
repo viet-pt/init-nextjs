@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/fontawesome-free-solid';
 import { doLogout } from 'stores/reducer/userReducer';
 import { Link } from 'routers';
-import { i18n } from 'utils/i18nconfig';
+import { i18n } from 'utils/i18nConfig';
 import MenuHeader from './component/MenuHeader';
 
 const Header = () => {

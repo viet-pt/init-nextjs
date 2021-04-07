@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { useStore } from 'stores';
-import { appWithTranslation, useTranslation } from 'utils/i18nconfig';
+import { appWithTranslation, useTranslation } from 'utils/i18nConfig';
 
 import "antd/dist/antd.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
